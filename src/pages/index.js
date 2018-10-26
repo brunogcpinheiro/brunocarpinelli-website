@@ -2,7 +2,8 @@ import React from "react"
 import styled from 'styled-components'
 import Particles from 'react-particles-js'
 import Typing from 'react-typing-animation'
-import { FaHeart } from "react-icons/fa";
+import { FaHeart, FaAngleDoubleDown } from "react-icons/fa"
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import Layout from '../layout/Layout'
 import Cursor from '../components/Cursor'
@@ -55,6 +56,7 @@ const Hero = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     
     img {
         width: 280px;
@@ -94,6 +96,7 @@ const Social = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 100px;
     
     a {
         img {
@@ -110,6 +113,27 @@ const Social = styled.div`
             }
         }
     }
+`
+
+const ArrowDown = styled.a`
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    
+    &:visited, &:active {
+        color: inherit;
+    }
+    
+    &:hover {
+        color: ${mainColor}
+    }
+`
+
+const Portfolio = styled.div`
+    width: 100%;
+    height: 250px;
+    background: #f8f8f8;
+    margin-top: 100px;
 `
 
 export default () => (
@@ -150,6 +174,22 @@ export default () => (
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_OsJ4ntKFKYk_oAShNzrvZXJvMKybdXTs0qyEwKEB2LyQ4eOb"
                     alt="GitHub" /></a>
             </Social>
+            <AnchorLink 
+                href="#portfolio"
+                style={{
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                    marginBottom: '10px',
+                    '&:hover': {
+                        color: '#000'
+                    }
+                }}>
+                <FaAngleDoubleDown style={{ fontSize: '3rem', justifySelf: 'flex-end', position: 'relative', zIndex: '2' }}/>
+            </AnchorLink>
         </Hero>
+        
+        <Portfolio id="portfolio">
+            <h1>Portfolio</h1>
+        </Portfolio>
     </Layout>
 );
