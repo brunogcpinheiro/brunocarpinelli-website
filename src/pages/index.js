@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import Particles from 'react-particles-js'
 import Typing from 'react-typing-animation'
 import { FaHeart, FaAngleDoubleDown } from "react-icons/fa"
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+// import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import Layout from '../layout/Layout'
 import Cursor from '../components/Cursor'
-import Avatar from '../images/eu.jpg'
+import Avatar from '../images/semfundo.png'
 
 console.log(Avatar);
 
@@ -16,7 +16,7 @@ const mainColor = '#0be881';
 const particlesObj = {
 	particles: {
 	    number: {
-	      value: 40,
+	      value: 60,
 	        density: {
             enable: true,
             value_area: 800
@@ -61,12 +61,14 @@ const Hero = styled.div`
     img {
         width: 280px;
         height: 280px;
-        border-radius: 10px;
+        border-radius: 50%;
         border: 3px solid #dcdde1;
         box-shadow: 0 2px 2px #f5f5f5;
         margin-top: 50px;
         position: relative;
         z-index: 2;
+        object-fit: cover;
+        object-position: top;
     }
     
     h1, p {
@@ -131,7 +133,7 @@ const ArrowDown = styled.a`
 
 const Portfolio = styled.div`
     width: 100%;
-    height: 250px;
+    height: 1000px;
     background: #f8f8f8;
     margin-top: 100px;
 `
@@ -149,7 +151,7 @@ export default () => (
         />
         <Hero className="hero">
             <img 
-                src="https://cactusthemes.com/blog/wp-content/uploads/2018/01/tt_avatar_small.jpg" 
+                src="https://i.imgur.com/NPvzci6.jpg"
                 alt="Avatar" />
             <h1>Olá! Meu nome é <span>Bruno Carpinelli</span></h1>
             <h2>Desenvolvedor Web / Mobile / Sistemas</h2>
@@ -174,7 +176,7 @@ export default () => (
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_OsJ4ntKFKYk_oAShNzrvZXJvMKybdXTs0qyEwKEB2LyQ4eOb"
                     alt="GitHub" /></a>
             </Social>
-            <AnchorLink 
+            <ArrowDown 
                 href="#portfolio"
                 style={{
                     display: 'flex',
@@ -185,7 +187,7 @@ export default () => (
                     }
                 }}>
                 <FaAngleDoubleDown style={{ fontSize: '3rem', justifySelf: 'flex-end', position: 'relative', zIndex: '2' }}/>
-            </AnchorLink>
+            </ArrowDown>
         </Hero>
         
         <Portfolio id="portfolio">
