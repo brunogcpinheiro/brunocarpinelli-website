@@ -2,8 +2,9 @@ import React from "react"
 import styled from 'styled-components'
 import Particles from 'react-particles-js'
 import Img from 'gatsby-image'
+import Typist from 'react-typist'
 import { graphql } from 'gatsby'
-import { FaHeart, FaAngleDoubleDown } from "react-icons/fa"
+import { FaAngleDoubleDown } from "react-icons/fa"
 // import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import Layout from '../layout/Layout'
@@ -51,13 +52,12 @@ const particlesObj = {
 
 const Hero = styled.div`
     background: #fff;
-    width: 100%;
+    width: 99%;
     height: calc(100vh - 130px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    overflow: hidden;
     
     img {
         width: 280px;
@@ -182,7 +182,9 @@ export default ({ data }) => (
             <h2>Desenvolvedor <span>Web / Mobile / Sistemas</span></h2>
             <h2>Designer e criador de <span>Mídias sociais</span></h2>
             
-            <h3>Apaixonado por tecnologia. <FaHeart style={{ verticalAlign: 'middle' }}/></h3>
+            <Typist className="typist" cursor={{hideWhenDone: true}}> 
+                <span>Apaixonado por tecnologia</span>
+            </Typist>
             <Social>
                 <a href="https://google.com" target="blank"><img 
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/600px-Facebook_logo_%28square%29.png"

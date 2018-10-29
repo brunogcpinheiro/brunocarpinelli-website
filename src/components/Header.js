@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-const HeaderStyle = styled.div`
+const HeaderStyle = styled.header`
     background: #fff;
     height: 70px;
     color: #000;
@@ -21,7 +21,8 @@ const MenuItem = styled.a`
     border-radius: 4px;
     text-decoration: none;
     color: #000;
-    font-weight: bold; 
+    font-weight: bold;
+    cursor: pointer;
     background: ${props => props.actived ? '#000' : 'none'}
     color: ${props => props.actived ? '#fff' : 'none'}
     
@@ -46,11 +47,11 @@ const linkStyles = {
 
 export default (props) => (
     <HeaderStyle>
-        <MenuItem actived href="#home"><Link to="/" style={linkStyles}>HOME</Link></MenuItem>
-        <MenuItem href="#portfolio">PORTFOLIO</MenuItem>
-        <MenuItem href="#sobre">SOBRE</MenuItem>
-        <MenuItem href="#servicos">SERVIÇOS</MenuItem>
-        <MenuItem href="#contato">CONTATO</MenuItem>
-        <MenuItem href="#blog"><Link to="/blog" style={linkStyles}>BLOG</Link></MenuItem>
+        <MenuItem actived><Link to={'/'} style={linkStyles}>HOME</Link></MenuItem>
+        <MenuItem>PORTFOLIO</MenuItem>
+        <MenuItem>SOBRE</MenuItem>
+        <MenuItem>SERVIÇOS</MenuItem>
+        <MenuItem>CONTATO</MenuItem>
+        <MenuItem><Link to={'/blog'} style={linkStyles}>BLOG</Link></MenuItem>
     </HeaderStyle>
 )
