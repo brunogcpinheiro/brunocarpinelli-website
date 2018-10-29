@@ -1,14 +1,12 @@
 import React from "react"
 import styled from 'styled-components'
 import Particles from 'react-particles-js'
-import Typing from 'react-typing-animation'
 import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import { FaHeart, FaAngleDoubleDown } from "react-icons/fa"
 // import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import Layout from '../layout/Layout'
-import Cursor from '../components/Cursor'
 import Avatar from '../images/avatar.jpg'
 
 console.log(Avatar);
@@ -184,12 +182,7 @@ export default ({ data }) => (
             <h2>Desenvolvedor <span>Web / Mobile / Sistemas</span></h2>
             <h2>Designer e criador de <span>Mídias sociais</span></h2>
             
-            <Typing loop={false} speed={120} startDelay={-10}>
-                <span style={{ color: mainColor }}>  
-                <Typing.Speed ms={120} />
-                    Apaixonado por tecnologia. <FaHeart style={{ verticalAlign: 'middle' }}/><Cursor />
-                </span>
-            </Typing>
+            <h3>Apaixonado por tecnologia. <FaHeart style={{ verticalAlign: 'middle' }}/></h3>
             <Social>
                 <a href="https://google.com" target="blank"><img 
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/600px-Facebook_logo_%28square%29.png"
