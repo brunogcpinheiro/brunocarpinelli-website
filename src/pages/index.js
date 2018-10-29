@@ -2,12 +2,14 @@ import React from "react"
 import styled from 'styled-components'
 import Particles from 'react-particles-js'
 import Typing from 'react-typing-animation'
+import Img from 'gatsby-image'
+import { graphql } from 'gatsby'
 import { FaHeart, FaAngleDoubleDown } from "react-icons/fa"
 // import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import Layout from '../layout/Layout'
 import Cursor from '../components/Cursor'
-import Avatar from '../images/semfundo.png'
+import Avatar from '../images/avatar.jpg'
 
 console.log(Avatar);
 
@@ -57,6 +59,7 @@ const Hero = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    overflow: hidden;
     
     img {
         width: 280px;
@@ -67,8 +70,6 @@ const Hero = styled.div`
         margin-top: 50px;
         position: relative;
         z-index: 2;
-        object-fit: cover;
-        object-position: top;
     }
     
     h1, p {
@@ -82,11 +83,17 @@ const Hero = styled.div`
         span {
             color: ${mainColor};
             font-size: 2rem;
+            opacity: 1;
+            transition: opacity 0.4s ease 0s;
         }
     }
     
     h2 {
-        margin: 30px 0;
+        margin: 5px 0 0 0;
+        
+        span {
+            color: #535c68;
+        }
     }
     
     p {
@@ -138,7 +145,27 @@ const Portfolio = styled.div`
     margin-top: 100px;
 `
 
-export default () => (
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "avatar.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fixed(width: 280, height: 280, quality: 100) {
+          width
+          height
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalName
+        }
+      }
+    }
+  }
+`
+
+export default ({ data }) => (
     <Layout>
         <Particles
             width="100%"
@@ -150,11 +177,12 @@ export default () => (
             }}
         />
         <Hero className="hero">
-            <img 
-                src="https://i.imgur.com/NPvzci6.jpg"
+            <Img 
+                fixed={data.file.childImageSharp.fixed}
                 alt="Avatar" />
             <h1>Olá! Meu nome é <span>Bruno Carpinelli</span></h1>
-            <h2>Desenvolvedor Web / Mobile / Sistemas</h2>
+            <h2>Desenvolvedor <span>Web / Mobile / Sistemas</span></h2>
+            <h2>Designer e criador de <span>Mídias sociais</span></h2>
             
             <Typing loop={false} speed={120} startDelay={-10}>
                 <span style={{ color: mainColor }}>  
