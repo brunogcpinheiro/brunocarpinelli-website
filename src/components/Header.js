@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+//import { Link } from 'gatsby'
+//import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const HeaderStyle = styled.header`
     background: #fff;
@@ -41,22 +41,13 @@ const MenuItem = styled.a`
     }
 `
 
-const linkStyles = {
-    color: 'inherit',
-    textDecoration: 'none'
-}
-
 export default (props) => (
     <HeaderStyle>
-        <MenuItem actived>
-            <AnchorLink>
-                <Link to={'/'} style={linkStyles}>HOME</Link>
-            </AnchorLink>
-        </MenuItem>
-        <MenuItem>PORTFOLIO</MenuItem>
+        <MenuItem actived>HOME</MenuItem>
+        <MenuItem href="#portfolio">PORTFOLIO</MenuItem>
         <MenuItem>SOBRE</MenuItem>
         <MenuItem>SERVIÇOS</MenuItem>
         <MenuItem>CONTATO</MenuItem>
-        <MenuItem><Link to={'/blog'} style={linkStyles}>BLOG</Link></MenuItem>
+        <MenuItem>BLOG</MenuItem>
     </HeaderStyle>
 )
