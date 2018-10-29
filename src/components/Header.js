@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Link from 'gatsby-link'
+//import Link from 'gatsby-link'
 
 const HeaderStyle = styled.header`
     background: #fff;
@@ -39,18 +39,18 @@ const MenuItem = styled.a`
     }
 `
 
-const linkStyles = {
-    color: 'inherit',
-    textDecoration: 'none'
-}
+// const linkStyles = {
+//     color: 'inherit',
+//     textDecoration: 'none'
+// }
 
 export default (props) => (
     <HeaderStyle>
-        <MenuItem actived href="#home"><Link to="/" style={linkStyles}>HOME</Link></MenuItem>
+        <MenuItem actived href="#home">HOME</MenuItem>
         <MenuItem href="#portfolio">PORTFOLIO</MenuItem>
         <MenuItem href="#sobre">SOBRE</MenuItem>
         <MenuItem href="#servicos">SERVIÇOS</MenuItem>
         <MenuItem href="#contato">CONTATO</MenuItem>
-        <MenuItem href="#blog"><Link to="/blog" style={linkStyles}>BLOG</Link></MenuItem>
+        <MenuItem href="#blog">BLOG</MenuItem>
     </HeaderStyle>
 )
