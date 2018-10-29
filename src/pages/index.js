@@ -123,8 +123,13 @@ const Social = styled.div`
 
 const ArrowDown = styled.a`
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
     margin-bottom: 10px;
+    text-decoration: none;
+    font-weight: bold;
     
     &:visited, &:active {
         color: inherit;
@@ -133,13 +138,26 @@ const ArrowDown = styled.a`
     &:hover {
         color: ${mainColor}
     }
+    
+    p {
+        margin-bottom: 10px;
+        
+        &:hover {
+            color: ${mainColor}
+        }
+    }
 `
 
-const Portfolio = styled.div`
+const About = styled.div`
     width: 100%;
-    height: 1000px;
-    background: #f8f8f8;
-    margin-top: 100px;
+    height: 100%;
+    background: #181818;
+    padding: 80px;
+    color: #fff;
+    
+    h2 {
+        border-bottom: 2px solid #fff;
+    }
 `
 
 export const query = graphql`
@@ -173,7 +191,7 @@ export default ({ data }) => (
                 maxWidth: '100%'
             }}
         />
-        <Hero className="hero">
+        <Hero className="hero fade-in">
             <Img 
                 fixed={data.file.childImageSharp.fixed}
                 alt="Avatar" />
@@ -198,22 +216,14 @@ export default ({ data }) => (
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_OsJ4ntKFKYk_oAShNzrvZXJvMKybdXTs0qyEwKEB2LyQ4eOb"
                     alt="GitHub" /></a>
             </Social>
-            <ArrowDown 
-                href="#portfolio"
-                style={{
-                    display: 'flex',
-                    justifyContent: 'flex-end',
-                    marginBottom: '10px',
-                    '&:hover': {
-                        color: '#000'
-                    }
-                }}>
-                <FaAngleDoubleDown style={{ fontSize: '3rem', justifySelf: 'flex-end', position: 'relative', zIndex: '2' }}/>
+            <ArrowDown href="#about">
+                <p>Sobre</p>
+                <FaAngleDoubleDown style={{ fontSize: '2rem' }}/>
             </ArrowDown>
         </Hero>
         
-        <Portfolio id="portfolio">
-            <h1>Portfolio</h1>
-        </Portfolio>
+        <About id="about">
+            <h2>SOBRE MIM</h2>  
+        </About>
     </Layout>
 );
