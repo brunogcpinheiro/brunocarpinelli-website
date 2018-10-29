@@ -5,7 +5,6 @@ import Img from 'gatsby-image'
 import Typist from 'react-typist'
 import { graphql } from 'gatsby'
 import { FaAngleDoubleDown } from "react-icons/fa"
-// import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import Layout from '../layout/Layout'
 import Avatar from '../images/avatar.jpg'
